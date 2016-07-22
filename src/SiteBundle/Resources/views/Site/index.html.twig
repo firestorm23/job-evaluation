@@ -1,0 +1,25 @@
+{% extends "SiteBundle::public.html.twig" %}
+
+
+{% block content %}
+
+    <table>
+        <thead>
+            <tr>
+                <td>Название</td>
+                <td>Цена</td>
+                <td>Файлы</td>
+            </tr>
+        </thead>
+        <tbody>
+            {% for good in goods %}
+                <tr>
+                    <td>{{ good.title }}</td>
+                    <td>{{ good.price }}</td>
+                    <td>{{ good.files|nl2br }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+{% endblock content %}
