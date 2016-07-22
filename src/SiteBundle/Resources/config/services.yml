@@ -1,7 +1,7 @@
 services:
 
     helper_twig_extension:
-        class: HelperExtension
+        class: SiteBundle\Extension\HelperExtension
         tags: [{ name: 'twig.extension' }]
         arguments: [@service_container ]
 
@@ -23,4 +23,4 @@ services:
         class: SiteBundle\Admin\PriceAdmin
         arguments: [~, SiteBundle\Entity\Price, SonataAdminBundle:CRUD]
         tags:
-            - { name: sonata.admin, manager_type: orm, group: admin, label: Price }
+            - { name: sonata.admin, manager_type: orm, group: admin, label: Price, show_in_dashboard: false }
